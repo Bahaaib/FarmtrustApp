@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Farmtrust',
       theme: ThemeData(
-        primarySwatch: Colors.green[300],
+        primarySwatch: Colors.green,
       ),
       home: _home,
       routes: <String, WidgetBuilder>{
