@@ -4,16 +4,18 @@ import 'dart:math' as Math;
 class ArcPainter extends CustomPainter {
   double startAngle;
   double sweepAngle;
+  Color color;
 
-  ArcPainter(double startAngle, double sweepAngle) {
+  ArcPainter(double startAngle, double sweepAngle, Color color) {
     this.startAngle = startAngle;
     this.sweepAngle = sweepAngle;
+    this.color = color;
   }
 
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
-      ..color = Colors.green[400]
+      ..color = color
       ..style = PaintingStyle.stroke
       ..strokeWidth = 100.0;
 
@@ -23,7 +25,7 @@ class ArcPainter extends CustomPainter {
 
     path.addArc(Rect.fromLTWH(0.0, 0.0, size.width, size.height),
         degToRad(startAngle), degToRad(sweepAngle));
-    canvas.drawShadow(path, Colors.green[400], 10.0, true);
+    canvas.drawShadow(path, color, 10.0, true);
     canvas.drawPath(path, paint);
   }
 
