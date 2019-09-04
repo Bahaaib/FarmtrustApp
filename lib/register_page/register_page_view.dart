@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:farmtrust_app/register_page/register_page_viewmodel.dart';
 
-class RegisterPageView extends LoginPageViewModel {
+class RegisterPageView extends RegisterPageViewModel {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _mobileController = TextEditingController();

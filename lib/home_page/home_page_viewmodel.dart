@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:farmtrust_app/register_page/register_page.dart';
+import 'package:farmtrust_app/home_page/home_page.dart';
 
-class RegisterPageViewModel extends State<RegisterPage> {
+class HomePageViewModel extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
