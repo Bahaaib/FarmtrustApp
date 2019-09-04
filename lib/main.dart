@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:farmtrust_app/register_page/register_page.dart';
+import 'package:farmtrust_app/home_page/home_page.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  final Widget _home = RegisterPage();
+  final Widget _home = HomePage();
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       ),
       home: _home,
       routes: <String, WidgetBuilder>{
-        '/register': (BuildContext context) => RegisterPage()
+        '/register': (BuildContext context) => RegisterPage(),
+        '/home': (BuildContext context) => HomePage()
       },
     );
   }

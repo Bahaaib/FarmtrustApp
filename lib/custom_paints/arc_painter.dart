@@ -13,9 +13,9 @@ class ArcPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
-      ..color = Colors.green
+      ..color = Colors.green[400]
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 80.0;
+      ..strokeWidth = 100.0;
 
     num degToRad(num deg) => deg * (Math.pi / 180.0);
 
@@ -23,7 +23,7 @@ class ArcPainter extends CustomPainter {
 
     path.addArc(Rect.fromLTWH(0.0, 0.0, size.width, size.height),
         degToRad(startAngle), degToRad(sweepAngle));
-    canvas.drawShadow(path, Colors.green, 10.0, true);
+    canvas.drawShadow(path, Colors.green[400], 10.0, true);
     canvas.drawPath(path, paint);
   }
 
