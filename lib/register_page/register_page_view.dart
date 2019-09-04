@@ -9,11 +9,11 @@ class RegisterPageView extends LoginPageViewModel {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: <Widget>[
+      body: ListView(children: <Widget>[
         Center(
           child: Container(
             width: 300.0,
-            margin: EdgeInsets.only(top: 160.0),
+            margin: EdgeInsets.only(top: 140.0),
             child: TextField(
               controller: _nameController,
               maxLength: 64,
@@ -98,7 +98,17 @@ class RegisterPageView extends LoginPageViewModel {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Container(
-                child: Image.asset('assets/ic_facebook.png'),
+                child: Material(
+                  clipBehavior: Clip.antiAlias,
+                  shape: CircleBorder(),
+                  color: Colors.transparent,
+                  child: Ink.image(
+                    image: AssetImage('assets/ic_facebook.png'),
+                    child: InkWell(
+                      onTap: () {},
+                    ),
+                  ),
+                ),
                 width: 50.0,
                 height: 50.0,
                 decoration: BoxDecoration(
@@ -108,7 +118,17 @@ class RegisterPageView extends LoginPageViewModel {
                 ),
               ),
               Container(
-                child: Image.asset('assets/ic_twitter.png'),
+                child: Material(
+                  clipBehavior: Clip.antiAlias,
+                  shape: CircleBorder(),
+                  color: Colors.transparent,
+                  child: Ink.image(
+                    image: AssetImage('assets/ic_twitter.png'),
+                    child: InkWell(
+                      onTap: () {},
+                    ),
+                  ),
+                ),
                 width: 50.0,
                 height: 50.0,
                 decoration: BoxDecoration(
@@ -118,7 +138,17 @@ class RegisterPageView extends LoginPageViewModel {
                 ),
               ),
               Container(
-                child: Image.asset('assets/ic_google.png'),
+                child: Material(
+                  clipBehavior: Clip.antiAlias,
+                  shape: CircleBorder(),
+                  color: Colors.transparent,
+                  child: Ink.image(
+                    image: AssetImage('assets/ic_google.png'),
+                    child: InkWell(
+                      onTap: () {},
+                    ),
+                  ),
+                ),
                 width: 50.0,
                 height: 50.0,
                 decoration: BoxDecoration(
@@ -126,7 +156,7 @@ class RegisterPageView extends LoginPageViewModel {
                   boxShadow: [BoxShadow(blurRadius: 6.0)],
                   shape: BoxShape.circle,
                 ),
-              )
+              ),
             ],
           ),
         )),
