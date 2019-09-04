@@ -45,6 +45,13 @@ flutter:
     - assets/ic_facebook.png
     - assets/ic_twitter.png
     - assets/ic_google.png
+    - assets/ic_qrcode.png
+    - assets/ic_scan.png
+    - assets/ic_account.png
+    - assets/ic_supermarket.png
+    - assets/ic_about.png
+    - assets/ic_rate.png
+    - assets/ic_recall.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

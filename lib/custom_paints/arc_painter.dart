@@ -17,7 +17,7 @@ class ArcPainter extends CustomPainter {
     Paint paint = Paint()
       ..color = color
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 100.0;
+      ..strokeWidth = 130.0;
 
     num degToRad(num deg) => deg * (Math.pi / 180.0);
 
