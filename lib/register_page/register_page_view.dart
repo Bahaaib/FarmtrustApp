@@ -2,6 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:farmtrust_app/register_page/register_page_viewmodel.dart';
 
 class RegisterPageView extends RegisterPageViewModel {
+  bool passwordVisible = false;
+
+  @override
+  void initState() {
+    passwordVisible = false;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,32 +55,24 @@ class RegisterPageView extends RegisterPageViewModel {
             width: 300.0,
             margin: EdgeInsets.only(top: 40.0),
             child: TextField(
-              controller: mobileController,
-              keyboardType: TextInputType.emailAddress,
-              maxLines: 1,
-              decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    Icons.phone_android,
-                    color: Colors.green[400],
-                  ),
-                  fillColor: Colors.green[400],
-                  hintText: 'Enter Mobile number'),
-            ),
-          ),
-        ),
-        Center(
-          child: Container(
-            width: 300.0,
-            margin: EdgeInsets.only(top: 40.0),
-            child: TextField(
               controller: passwordController,
               keyboardType: TextInputType.text,
+              obscureText: !passwordVisible,
               maxLines: 1,
               decoration: InputDecoration(
                   prefixIcon: Icon(
-                    Icons.phone_android,
+                    Icons.lock_outline,
                     color: Colors.green[400],
                   ),
+                  suffixIcon: IconButton(
+                      icon: Icon(passwordVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                      onPressed: () {
+                        setState(() {
+                          passwordVisible = !passwordVisible;
+                        });
+                      }),
                   fillColor: Colors.green[400],
                   hintText: 'Enter Password'),
             ),
