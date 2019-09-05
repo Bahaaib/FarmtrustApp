@@ -79,10 +79,10 @@ class ReviewsPageView extends ReviewsPageViewModel {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 10.0, left: 20.0),
+                  margin: EdgeInsets.only(top: 15.0, left: 20.0),
                   child: Text(
                     'Really Great Experience',
-                    style: TextStyle(color: Colors.grey),
+                    style: TextStyle(color: Colors.grey[600]),
                   ),
                 ),
               ],
