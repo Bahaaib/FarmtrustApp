@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:farmtrust_app/register_page/register_page_viewmodel.dart';
 
 class RegisterPageView extends RegisterPageViewModel {
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _mobileController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +11,7 @@ class RegisterPageView extends RegisterPageViewModel {
             width: 300.0,
             margin: EdgeInsets.only(top: 140.0),
             child: TextField(
-              controller: _nameController,
+              controller: nameController,
               maxLength: 64,
               maxLines: 1,
               decoration: InputDecoration(
@@ -33,7 +29,7 @@ class RegisterPageView extends RegisterPageViewModel {
             width: 300.0,
             margin: EdgeInsets.only(top: 20.0),
             child: TextField(
-              controller: _emailController,
+              controller: emailController,
               keyboardType: TextInputType.emailAddress,
               maxLines: 1,
               decoration: InputDecoration(
@@ -51,7 +47,7 @@ class RegisterPageView extends RegisterPageViewModel {
             width: 300.0,
             margin: EdgeInsets.only(top: 40.0),
             child: TextField(
-              controller: _mobileController,
+              controller: mobileController,
               keyboardType: TextInputType.emailAddress,
               maxLines: 1,
               decoration: InputDecoration(
@@ -65,6 +61,24 @@ class RegisterPageView extends RegisterPageViewModel {
           ),
         ),
         Center(
+          child: Container(
+            width: 300.0,
+            margin: EdgeInsets.only(top: 40.0),
+            child: TextField(
+              controller: passwordController,
+              keyboardType: TextInputType.text,
+              maxLines: 1,
+              decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.phone_android,
+                    color: Colors.green[400],
+                  ),
+                  fillColor: Colors.green[400],
+                  hintText: 'Enter Password'),
+            ),
+          ),
+        ),
+        Center(
             child: Container(
           child: RaisedButton(
             textColor: Colors.white,
@@ -72,7 +86,7 @@ class RegisterPageView extends RegisterPageViewModel {
               'SIGN UP',
               style: TextStyle(fontSize: 16.0),
             ),
-            onPressed: () {},
+            onPressed: signUp,
             color: Colors.green[400],
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
@@ -188,5 +202,25 @@ class RegisterPageView extends RegisterPageViewModel {
         )
       ]),
     );
+  }
+
+  @override
+  void showMessageDialog(String title, String message) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(title),
+            content: Text(message),
+            actions: <Widget>[
+              InkWell(
+                child: Text('ok'),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
   }
 }

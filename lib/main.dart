@@ -5,7 +5,8 @@ import 'package:farmtrust_app/home_page/home_page.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  final Widget _home = HomePage();
+  //final Widget _home = HomePage();
+  final Widget _home = RegisterPage();
 
   @override
   Widget build(BuildContext context) {
