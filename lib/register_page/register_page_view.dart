@@ -25,9 +25,9 @@ class RegisterPageView extends RegisterPageViewModel {
               decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.person_pin,
-                    color: Colors.green[400],
+                    color: Color(0xff00c853),
                   ),
-                  fillColor: Colors.green[400],
+                  fillColor: Color(0xff00c853),
                   hintText: 'Username'),
             ),
           ),
@@ -43,9 +43,9 @@ class RegisterPageView extends RegisterPageViewModel {
               decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.mail_outline,
-                    color: Colors.green[400],
+                    color: Color(0xff00c853),
                   ),
-                  fillColor: Colors.green[400],
+                  fillColor: Color(0xff00c853),
                   hintText: 'Email Address'),
             ),
           ),
@@ -62,7 +62,7 @@ class RegisterPageView extends RegisterPageViewModel {
               decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.lock_outline,
-                    color: Colors.green[400],
+                    color: Color(0xff00c853),
                   ),
                   suffixIcon: IconButton(
                       icon: Icon(passwordVisible
@@ -73,7 +73,7 @@ class RegisterPageView extends RegisterPageViewModel {
                           passwordVisible = !passwordVisible;
                         });
                       }),
-                  fillColor: Colors.green[400],
+                  fillColor: Color(0xff00c853),
                   hintText: 'Enter Password'),
             ),
           ),
@@ -87,7 +87,7 @@ class RegisterPageView extends RegisterPageViewModel {
               style: TextStyle(fontSize: 16.0),
             ),
             onPressed: signUp,
-            color: Colors.green[400],
+            color: Color(0xff00c853),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
           ),
@@ -192,7 +192,7 @@ class RegisterPageView extends RegisterPageViewModel {
                     'Login',
                     style: TextStyle(
                         fontSize: 16.0,
-                        color: Colors.green[400],
+                        color: Color(0xff00c853),
                         fontWeight: FontWeight.bold),
                   ),
                 ),
