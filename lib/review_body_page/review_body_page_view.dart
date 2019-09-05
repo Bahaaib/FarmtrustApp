@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:farmtrust_app/shared_widgets/separator.dart';
 import 'package:farmtrust_app/review_body_page/review_body_viewmodel.dart';
 
 class ReviewBodyPageView extends ReviewBodyPageViewModel {
@@ -71,6 +72,10 @@ class ReviewBodyPageView extends ReviewBodyPageViewModel {
                           hintText: 'Write Review here...'),
                     ),
                   ),
+                  Container(
+                    margin: EdgeInsets.only(top: 10.0),
+                    child: Separator(color: Colors.grey),
+                  )
                 ],
               ),
             ),

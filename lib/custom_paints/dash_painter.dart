@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
 
-
 class DashLinePainter extends CustomPainter {
+  Color color;
+
+  DashLinePainter({Color color}) {
+    this.color = color;
+  }
+
   @override
   void paint(Canvas canvas, Size size) {
-    var paint = Paint()..strokeWidth = 2;
-    var max = 35;
+    var paint = Paint()
+      ..strokeWidth = 2
+      ..color = color;
+    var max = 340;
     var dashWidth = 5;
     var dashSpace = 5;
-    double startY = 0;
+    double startX = 0;
     while (max >= 0) {
-      canvas.drawLine(Offset(0, startY), Offset(0, startY + dashWidth), paint);
+      canvas.drawLine(Offset(startX, 0), Offset(startX + dashWidth, 0), paint);
       final space = (dashSpace + dashWidth);
-      startY += space;
+      startX += space;
       max -= space;
     }
   }
