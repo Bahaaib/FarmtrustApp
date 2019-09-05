@@ -53,7 +53,10 @@ class ReviewsPageView extends ReviewsPageViewModel {
         margin: EdgeInsets.only(top: 15.0, bottom: 10.0),
         width: 380.0,
         height: 90.0,
-        decoration: BoxDecoration(
+        decoration: BoxDecoration(boxShadow: [BoxShadow(
+            color: Colors.grey[400],
+            blurRadius: 20.0,
+            spreadRadius: 5.0),],
             color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
         child: Row(
           children: <Widget>[
