@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "573238786744",
+    "firebase_url": "https://farmtrust-a0c8f.firebaseio.com",
+    "project_id": "farmtrust-a0c8f",
+    "storage_bucket": "farmtrust-a0c8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573238786744:android:7ded4c9187ded81dd0124d",
+        "android_client_info": {
+          "package_name": "com.bahaa.farmtrust_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573238786744-d9umalq7hh3kubs5m13673erjn4fkeue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjWos7wfb7CStZuLCE1mUA_W6FOV3RFh8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573238786744-d9umalq7hh3kubs5m13673erjn4fkeue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
