@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:farmtrust_app/shared_widgets/separator.dart';
 import 'package:farmtrust_app/review_body_page/review_body_viewmodel.dart';
+import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class ReviewBodyPageView extends ReviewBodyPageViewModel {
   final Color _primaryColor = Color(0xff00c853);
@@ -44,7 +45,7 @@ class ReviewBodyPageView extends ReviewBodyPageViewModel {
         children: <Widget>[
           Center(
             child: Container(
-              margin: EdgeInsets.only(top: 40.0),
+              margin: EdgeInsets.only(top: 30.0),
               width: 350.0,
               height: 400.0,
               decoration: BoxDecoration(
@@ -74,12 +75,74 @@ class ReviewBodyPageView extends ReviewBodyPageViewModel {
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 10.0),
-                    child: Separator(color: Colors.grey),
+                    child: Separator(color: Colors.grey[300]),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(top: 20.0, right: 20.0),
+                        child: SmoothStarRating(
+                          starCount: 5,
+                          borderColor: Colors.orange,
+                          color: Colors.orange,
+                          size: 30.0,
+                          rating: 4,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 20.0, right: 40.0),
+                        child: Text(
+                          'Rate it',
+                          style: TextStyle(
+                              color: _primaryColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0),
+                        ),
+                      ),
+                    ],
                   )
                 ],
               ),
             ),
-          )
+          ),
+          Center(
+            child: Container(
+                margin: EdgeInsets.only(top: 20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(
+                      Icons.info_outline,
+                      color: Colors.orange,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 10.0),
+                      child: Text(
+                        'Most helpful reviews have 100 words or more',
+                        style: TextStyle(color: Colors.grey[700]),
+                      ),
+                    )
+                  ],
+                )),
+          ),
+          Center(
+              child: Container(
+            child: RaisedButton(
+              textColor: Colors.white,
+              child: Text(
+                'SUBMIT',
+                style: TextStyle(fontSize: 16.0),
+              ),
+              onPressed: () {},
+              color: _primaryColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0)),
+            ),
+            width: 350.0,
+            height: 60.0,
+            margin: EdgeInsets.only(top: 15.0),
+          )),
         ],
       ),
     );
