@@ -39,6 +39,44 @@ class ReviewBodyPageView extends ReviewBodyPageViewModel {
               ),
             ],
           )),
+      body: ListView(
+        children: <Widget>[
+          Center(
+            child: Container(
+              margin: EdgeInsets.only(top: 40.0),
+              width: 350.0,
+              height: 400.0,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10.0),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey[400],
+                        blurRadius: 50.0,
+                        spreadRadius: 5.0),
+                  ]),
+              child: ListView(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.only(left: 20.0, right: 20.0),
+                    width: 300.0,
+                    height: 300.0,
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: TextField(
+                      keyboardType: TextInputType.multiline,
+                      maxLines: null,
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          fillColor: Color(0xff00c853),
+                          hintText: 'Write Review here...'),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
