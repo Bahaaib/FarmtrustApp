@@ -43,80 +43,139 @@ class ScansPageView extends ScansPageViewModel {
         body: OrientationBuilder(builder: (context, orientation) {
           double _width = MediaQuery.of(context).size.width;
 
-          return Stack(
-            children: <Widget>[
-              ListView.builder(
+          return Stack(children: <Widget>[
+            Container(
+              padding: EdgeInsets.only(
+                bottom: 80.0,
+              ),
+              child: ListView.builder(
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int position) =>
                       buildListItems(context, position)),
-              Column(
+            ),
+            Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Container(
-                    width: _width,
-                    height: 80.0,
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(blurRadius: 2.0, spreadRadius: -2.0)
+                      color: Colors.transparent,
+                      width: _width,
+                      height: 120.0,
+                      child: Stack(
+                        children: <Widget>[
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Container(
+                              width: _width,
+                              height: 80.0,
+                              decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                        blurRadius: 2.0, spreadRadius: -2.0)
+                                  ],
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(15.0),
+                                      topRight: Radius.circular(15.0))),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Container(
+                                    child: Column(
+                                      children: <Widget>[
+                                        Material(
+                                          type: MaterialType.transparency,
+                                          shape: CircleBorder(),
+                                          clipBehavior: Clip.antiAlias,
+                                          child: IconButton(
+                                              icon: Icon(
+                                                Icons.edit,
+                                                color: _primaryColor,
+                                              ),
+                                              onPressed: () {}),
+                                        ),
+                                        Text(
+                                          'Edit Products',
+                                          style: TextStyle(fontSize: 15.0),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    margin:
+                                        EdgeInsets.only(top: 0.0, left: 150.0),
+                                    child: Column(
+                                      children: <Widget>[
+                                        Material(
+                                          type: MaterialType.transparency,
+                                          shape: CircleBorder(),
+                                          clipBehavior: Clip.antiAlias,
+                                          child: IconButton(
+                                              icon: Icon(
+                                                Icons.location_on,
+                                                color: _primaryColor,
+                                              ),
+                                              onPressed: () {}),
+                                        ),
+                                        Text(
+                                          'Near Me',
+                                          style: TextStyle(fontSize: 15.0),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Align(
+                              alignment: Alignment.topCenter,
+                              child: Container(
+                                alignment: Alignment.center,
+                                width: 80.0,
+                                height: 80.0,
+                                decoration: BoxDecoration(boxShadow: [
+                                  BoxShadow(
+                                      color: _primaryColor,
+                                      blurRadius: 15.0,
+                                      spreadRadius: 0.0)
+                                ], shape: BoxShape.circle, color: Colors.white),
+                                child: Container(
+                                  width: 70.0,
+                                  height: 70.0,
+                                  decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                            color: Colors.green[700],
+                                            blurRadius: 0.0),
+                                        BoxShadow(
+                                            color: Colors.green[700],
+                                            offset: Offset(0.0, 0.0)),
+                                        BoxShadow(
+                                            color: _primaryColor,
+                                            offset: Offset(0.0, 0.0),
+                                            spreadRadius: 0.0,
+                                            blurRadius: 0.0)
+                                      ],
+                                      shape: BoxShape.circle,
+                                      color: Colors.transparent),
+                                  child: Material(
+                                    type: MaterialType.transparency,
+                                    shape: CircleBorder(),
+                                    clipBehavior: Clip.antiAlias,
+                                    child: IconButton(
+                                        icon: Image.asset(
+                                          'assets/ic_qrcode.png',
+                                          color: Colors.white,
+                                        ),
+                                        onPressed: () {}),
+                                  ),
+                                ),
+                              ))
                         ],
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(15.0),
-                            topRight: Radius.circular(15.0))),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Container(
-                          child: Column(
-                            children: <Widget>[
-                              Material(
-                                type: MaterialType.transparency,
-                                shape: CircleBorder(),
-                                clipBehavior: Clip.antiAlias,
-                                child: IconButton(
-                                    icon: Icon(
-                                      Icons.edit,
-                                      color: _primaryColor,
-                                    ),
-                                    onPressed: () {}),
-                              ),
-                              Text(
-                                'Edit Products',
-                                style: TextStyle(fontSize: 15.0),
-                              )
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(top: 0.0, left: 150.0),
-                          child: Column(
-                            children: <Widget>[
-                              Material(
-                                type: MaterialType.transparency,
-                                shape: CircleBorder(),
-                                clipBehavior: Clip.antiAlias,
-                                child: IconButton(
-                                    icon: Icon(
-                                      Icons.location_on,
-                                      color: _primaryColor,
-                                    ),
-                                    onPressed: () {}),
-                              ),
-                              Text(
-                                'Near Me',
-                                style: TextStyle(fontSize: 15.0),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              )
-            ],
-          );
+                      )),
+                ])
+          ]);
         }));
   }
 
