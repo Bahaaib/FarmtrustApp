@@ -7,7 +7,7 @@ import 'package:farmtrust_app/review_body_page/review_body_page.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  final Widget _home = ReviewsPage();
+  final Widget _home = RegisterPage();
 
   @override
   Widget build(BuildContext context) {
