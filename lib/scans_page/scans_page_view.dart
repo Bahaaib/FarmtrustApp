@@ -54,10 +54,12 @@ class ScansPageView extends ScansPageViewModel {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Container(
-                    alignment: Alignment.topCenter,
                     width: _width,
                     height: 80.0,
-                    decoration: BoxDecoration(boxShadow: [BoxShadow(blurRadius: 2.0, spreadRadius: -2.0)],
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(blurRadius: 2.0, spreadRadius: -2.0)
+                        ],
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(15.0),
@@ -66,15 +68,19 @@ class ScansPageView extends ScansPageViewModel {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Container(
-                          margin: EdgeInsets.only(top: 0.0, left: 0.0),
                           child: Column(
                             children: <Widget>[
-                              IconButton(
-                                  icon: Icon(
-                                    Icons.edit,
-                                    color: _primaryColor,
-                                  ),
-                                  onPressed: () {}),
+                              Material(
+                                type: MaterialType.transparency,
+                                shape: CircleBorder(),
+                                clipBehavior: Clip.antiAlias,
+                                child: IconButton(
+                                    icon: Icon(
+                                      Icons.edit,
+                                      color: _primaryColor,
+                                    ),
+                                    onPressed: () {}),
+                              ),
                               Text(
                                 'Edit Products',
                                 style: TextStyle(fontSize: 15.0),
@@ -86,12 +92,17 @@ class ScansPageView extends ScansPageViewModel {
                           margin: EdgeInsets.only(top: 0.0, left: 150.0),
                           child: Column(
                             children: <Widget>[
-                              IconButton(
-                                  icon: Icon(
-                                    Icons.location_on,
-                                    color: _primaryColor,
-                                  ),
-                                  onPressed: () {}),
+                              Material(
+                                type: MaterialType.transparency,
+                                shape: CircleBorder(),
+                                clipBehavior: Clip.antiAlias,
+                                child: IconButton(
+                                    icon: Icon(
+                                      Icons.location_on,
+                                      color: _primaryColor,
+                                    ),
+                                    onPressed: () {}),
+                              ),
                               Text(
                                 'Near Me',
                                 style: TextStyle(fontSize: 15.0),
