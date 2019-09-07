@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:farmtrust_app/scans_page/scans_page_viewmodel.dart';
-import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class ScansPageView extends ScansPageViewModel {
   final Color _primaryColor = Color(0xff00c853);
@@ -49,7 +48,7 @@ class ScansPageView extends ScansPageViewModel {
                 bottom: 80.0,
               ),
               child: ListView.builder(
-                  itemCount: 10,
+                  itemCount: 3,
                   itemBuilder: (BuildContext context, int position) =>
                       buildListItems(context, position)),
             ),
@@ -64,114 +63,118 @@ class ScansPageView extends ScansPageViewModel {
                       child: Stack(
                         children: <Widget>[
                           Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Container(
-                              width: _width,
-                              height: 80.0,
-                              decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                        blurRadius: 2.0, spreadRadius: -2.0)
-                                  ],
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(15.0),
-                                      topRight: Radius.circular(15.0))),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Container(
-                                    child: Column(
-                                      children: <Widget>[
-                                        Material(
-                                          type: MaterialType.transparency,
-                                          shape: CircleBorder(),
-                                          clipBehavior: Clip.antiAlias,
-                                          child: IconButton(
-                                              icon: Icon(
-                                                Icons.edit,
-                                                color: _primaryColor,
-                                              ),
-                                              onPressed: () {}),
-                                        ),
-                                        Text(
-                                          'Edit Products',
-                                          style: TextStyle(fontSize: 15.0),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    margin:
-                                        EdgeInsets.only(top: 0.0, left: 150.0),
-                                    child: Column(
-                                      children: <Widget>[
-                                        Material(
-                                          type: MaterialType.transparency,
-                                          shape: CircleBorder(),
-                                          clipBehavior: Clip.antiAlias,
-                                          child: IconButton(
-                                              icon: Icon(
-                                                Icons.location_on,
-                                                color: _primaryColor,
-                                              ),
-                                              onPressed: () {}),
-                                        ),
-                                        Text(
-                                          'Near Me',
-                                          style: TextStyle(fontSize: 15.0),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Align(
-                              alignment: Alignment.topCenter,
+                              alignment: Alignment.bottomCenter,
                               child: Container(
-                                alignment: Alignment.center,
-                                width: 80.0,
-                                height: 80.0,
-                                decoration: BoxDecoration(boxShadow: [
-                                  BoxShadow(
-                                      color: _primaryColor,
-                                      blurRadius: 15.0,
-                                      spreadRadius: 0.0)
-                                ], shape: BoxShape.circle, color: Colors.white),
+                                color: Colors.grey[300],
                                 child: Container(
-                                  width: 70.0,
-                                  height: 70.0,
+                                  width: _width,
+                                  height: 80.0,
                                   decoration: BoxDecoration(
-                                      boxShadow: [
-                                        BoxShadow(
-                                            color: Colors.green[700],
-                                            blurRadius: 0.0),
-                                        BoxShadow(
-                                            color: Colors.green[700],
-                                            offset: Offset(0.0, 0.0)),
-                                        BoxShadow(
-                                            color: _primaryColor,
-                                            offset: Offset(0.0, 0.0),
-                                            spreadRadius: 0.0,
-                                            blurRadius: 0.0)
-                                      ],
-                                      shape: BoxShape.circle,
-                                      color: Colors.transparent),
-                                  child: Material(
-                                    type: MaterialType.transparency,
-                                    shape: CircleBorder(),
-                                    clipBehavior: Clip.antiAlias,
-                                    child: IconButton(
-                                        icon: Image.asset(
-                                          'assets/ic_qrcode.png',
-                                          color: Colors.white,
+                                    borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(15.0),
+                                        topLeft: Radius.circular(15.0)),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          blurRadius: 2.0, spreadRadius: -2.0)
+                                    ],
+                                    color: Colors.white,
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Container(
+                                        child: Column(
+                                          children: <Widget>[
+                                            Material(
+                                              type: MaterialType.transparency,
+                                              shape: CircleBorder(),
+                                              clipBehavior: Clip.antiAlias,
+                                              child: IconButton(
+                                                  icon: Icon(
+                                                    Icons.edit,
+                                                    color: _primaryColor,
+                                                  ),
+                                                  onPressed: () {}),
+                                            ),
+                                            Text(
+                                              'Edit Products',
+                                              style: TextStyle(fontSize: 15.0),
+                                            )
+                                          ],
                                         ),
-                                        onPressed: () {}),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.only(
+                                            top: 0.0, left: 150.0),
+                                        child: Column(
+                                          children: <Widget>[
+                                            Material(
+                                              type: MaterialType.transparency,
+                                              shape: CircleBorder(),
+                                              clipBehavior: Clip.antiAlias,
+                                              child: IconButton(
+                                                  icon: Icon(
+                                                    Icons.location_on,
+                                                    color: _primaryColor,
+                                                  ),
+                                                  onPressed: () {}),
+                                            ),
+                                            Text(
+                                              'Near Me',
+                                              style: TextStyle(fontSize: 15.0),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                              ))
+                              )),
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: Container(
+                              alignment: Alignment.center,
+                              width: 80.0,
+                              height: 80.0,
+                              decoration: BoxDecoration(boxShadow: [
+                                BoxShadow(
+                                    color: _primaryColor,
+                                    blurRadius: 15.0,
+                                    spreadRadius: 0.0)
+                              ], shape: BoxShape.circle, color: Colors.white),
+                              child: Container(
+                                width: 70.0,
+                                height: 70.0,
+                                decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: Colors.green[700],
+                                          blurRadius: 0.0),
+                                      BoxShadow(
+                                          color: Colors.green[700],
+                                          offset: Offset(0.0, 0.0)),
+                                      BoxShadow(
+                                          color: _primaryColor,
+                                          offset: Offset(0.0, 0.0),
+                                          spreadRadius: 0.0,
+                                          blurRadius: 0.0)
+                                    ],
+                                    shape: BoxShape.circle,
+                                    color: Colors.transparent),
+                                child: Material(
+                                  type: MaterialType.transparency,
+                                  shape: CircleBorder(),
+                                  clipBehavior: Clip.antiAlias,
+                                  child: IconButton(
+                                      icon: Image.asset(
+                                        'assets/ic_qrcode.png',
+                                        color: Colors.white,
+                                      ),
+                                      onPressed: () {}),
+                                ),
+                              ),
+                            ),
+                          )
                         ],
                       )),
                 ])
@@ -181,73 +184,153 @@ class ScansPageView extends ScansPageViewModel {
 
   Widget buildListItems(BuildContext context, int position) {
     return Center(
-      child: Container(
-        margin: EdgeInsets.only(top: 15.0, bottom: 10.0),
-        width: 380.0,
-        height: 90.0,
-        decoration: BoxDecoration(boxShadow: [
-          BoxShadow(
-              color: Colors.grey[400], blurRadius: 20.0, spreadRadius: 5.0),
-        ], color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
-        child: Row(
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.only(left: 12.0),
-              width: 60.0,
-              height: 60.0,
-              decoration: BoxDecoration(
-                  color: Colors.grey[300], shape: BoxShape.circle),
-              child: Image.asset(
-                'assets/ic_avatar.png',
-                color: Colors.grey[400],
-              ),
-            ),
-            Column(
+        child: Container(
+      margin: EdgeInsets.only(top: 10.0, bottom: 15.0),
+      width: 380.0,
+      height: 240.0,
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(color: Colors.grey[400], blurRadius: 20.0, spreadRadius: 5.0),
+      ], color: Colors.transparent, borderRadius: BorderRadius.circular(15.0)),
+      child: Stack(children: <Widget>[
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            width: 380.0,
+            height: 220.0,
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(15.0)),
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(top: 20.0, left: 20.0),
+                  margin: EdgeInsets.only(top: 90.0, left: 20.0),
                   child: Text(
-                    'Keria S.',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    'Green Gram - Nylon N26',
+                    style:
+                        TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 15.0, left: 20.0),
-                  child: Text(
-                    'Really Great Experience',
-                    style: TextStyle(color: Colors.grey[600]),
-                  ),
-                ),
+                    margin: EdgeInsets.only(top: 10.0, left: 20.0, right: 20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Container(
+                              child: Text(
+                                'Selling Price',
+                                style: TextStyle(
+                                    color: _primaryColor,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 8.0),
+                              child: Text(
+                                'KSH 160/KG',
+                              ),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 10),
+                          height: 30.0,
+                          child: VerticalDivider(
+                            color: Colors.grey[400],
+                          ),
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Container(
+                              child: Text(
+                                'Farmer Income',
+                                style: TextStyle(
+                                    color: _primaryColor,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 8.0),
+                              child: Text(
+                                'KSH 75/KG',
+                              ),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 10),
+                          height: 30.0,
+                          child: VerticalDivider(
+                            color: Colors.grey[400],
+                          ),
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Container(
+                              child: Text(
+                                'Harvested On',
+                                style: TextStyle(
+                                    color: _primaryColor,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 8.0),
+                              child: Text(
+                                '12-06-2018',
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    )),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.only(top: 10.0, left: 20.0),
+                      child: Text(
+                        'Origin',
+                        style: TextStyle(
+                            color: _primaryColor, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(top: 8.0, left: 20.0),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              child: Image.asset('assets/ic_kenya.png'),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left: 10.0),
+                              child: Text(
+                                'KITUI East - Kenya',
+                                style: TextStyle(fontSize: 14.0),
+                              ),
+                            )
+                          ],
+                        )),
+                  ],
+                )
               ],
             ),
-            Spacer(
-              flex: 1,
-            ),
-            Column(
-              children: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(top: 20.0, right: 20.0),
-                  child: SmoothStarRating(
-                    starCount: 5,
-                    borderColor: Colors.orange,
-                    color: Colors.orange,
-                    size: 20.0,
-                    rating: 4,
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 10.0, right: 20.0),
-                  child: Text(
-                    '2 days ago',
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                ),
-              ],
-            ),
-          ],
+          ),
         ),
-      ),
-    );
+        Align(
+          alignment: Alignment.topCenter,
+          child: Container(
+            width: 340.0,
+            height: 100.0,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/beans.jpg'), fit: BoxFit.fill),
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.circular(15.0)),
+          ),
+        )
+      ]),
+    ));
   }
 }
