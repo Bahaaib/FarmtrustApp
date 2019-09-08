@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:farmtrust_app/register_page/register_page_viewmodel.dart';
+import 'package:farmtrust_app/home_page/home_page.dart';
+import 'package:farmtrust_app/reviews_page/reviews_page.dart';
+import 'package:farmtrust_app/review_body_page/review_body_page.dart';
+import 'package:farmtrust_app/scans_page/scans_page.dart';
 
 class RegisterPageView extends RegisterPageViewModel {
   bool passwordVisible = false;
@@ -14,6 +18,50 @@ class RegisterPageView extends RegisterPageViewModel {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(children: <Widget>[
+        Center(
+          child: Column(
+            children: <Widget>[
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomePage()));
+                },
+                child: Container(
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: Text('Go To Home ->')),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ReviewsPage()));
+                },
+                child: Container(
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: Text('Go To Reviews ->')),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ReviewBodyPage()));
+                },
+                child: Container(
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: Text('Go To Write Review ->')),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ScansPage()));
+                },
+                child: Container(
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: Text('Go To Scan Logs ->')),
+              ),
+            ],
+          ),
+        ),
         Center(
           child: Container(
             width: 300.0,
