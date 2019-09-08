@@ -119,7 +119,7 @@ class RegisterPageView extends RegisterPageViewModel {
                   child: Ink.image(
                     image: AssetImage('assets/ic_facebook.png'),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: signUpFB,
                     ),
                   ),
                 ),
