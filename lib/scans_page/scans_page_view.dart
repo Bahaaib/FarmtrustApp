@@ -45,7 +45,7 @@ class ScansPageView extends ScansPageViewModel {
           return Stack(children: <Widget>[
             Container(
               padding: EdgeInsets.only(
-                bottom: 80.0,
+                bottom: _width > 400 ? 80.0 : 70.0,
               ),
               child: ListView.builder(
                   itemCount: 3,
@@ -59,7 +59,7 @@ class ScansPageView extends ScansPageViewModel {
                   Container(
                       color: Colors.transparent,
                       width: _width,
-                      height: 120.0,
+                      height: _width > 400 ? 120.0 : 100.0,
                       child: Stack(
                         children: <Widget>[
                           Align(
@@ -68,7 +68,7 @@ class ScansPageView extends ScansPageViewModel {
                                 color: Colors.grey[300],
                                 child: Container(
                                   width: _width,
-                                  height: 80.0,
+                                  height: _width > 400 ? 80.0 : 70.0,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.only(
                                         topRight: Radius.circular(15.0),
@@ -134,24 +134,23 @@ class ScansPageView extends ScansPageViewModel {
                             alignment: Alignment.topCenter,
                             child: Container(
                               alignment: Alignment.center,
-                              width: 80.0,
-                              height: 80.0,
+                              width: _width > 400 ? 80.0 : 65.0,
+                              height: _width > 400 ? 80.0 : 65.0,
                               decoration: BoxDecoration(boxShadow: [
                                 BoxShadow(
                                     color: _primaryColor,
-                                    blurRadius: 15.0,
+                                    blurRadius: _width > 400 ? 15.0 : 10.0,
                                     spreadRadius: 0.0)
                               ], shape: BoxShape.circle, color: Colors.white),
                               child: Container(
-                                width: 70.0,
-                                height: 70.0,
+                                width: _width > 400 ? 70.0 : 55.0,
+                                height: _width > 400 ? 70.0 : 55.0,
                                 decoration: BoxDecoration(
                                     boxShadow: [
                                       BoxShadow(
-                                          color: Colors.green[700],
-                                          blurRadius: 0.0),
+                                          color: Colors.green, blurRadius: 0.0),
                                       BoxShadow(
-                                          color: Colors.green[700],
+                                          color: Colors.green,
                                           offset: Offset(0.0, 0.0)),
                                       BoxShadow(
                                           color: _primaryColor,
@@ -166,6 +165,7 @@ class ScansPageView extends ScansPageViewModel {
                                   shape: CircleBorder(),
                                   clipBehavior: Clip.antiAlias,
                                   child: IconButton(
+                                      splashColor: Colors.grey,
                                       icon: Image.asset(
                                         'assets/ic_qrcode.png',
                                         color: Colors.white,
@@ -321,7 +321,7 @@ class ScansPageView extends ScansPageViewModel {
         Align(
           alignment: Alignment.topCenter,
           child: Container(
-            width: width > 400? 340.0 : 300,
+            width: width > 400 ? 340.0 : 300,
             height: 100.0,
             decoration: BoxDecoration(
                 image: DecorationImage(

@@ -234,16 +234,19 @@ class RegisterPageView extends RegisterPageViewModel {
                     style: TextStyle(fontSize: 16.0),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: 30.0, left: 8.0, bottom: 20.0),
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                        fontSize: 16.0,
-                        color: Color(0xff00c853),
-                        fontWeight: FontWeight.bold),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    margin: EdgeInsets.only(top: 30.0, left: 8.0, bottom: 20.0),
+                    child: Text(
+                      'Login',
+                      style: TextStyle(
+                          fontSize: 16.0,
+                          color: Color(0xff00c853),
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
-                ),
+                )
               ],
             ),
           ),
