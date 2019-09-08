@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         '/home': (BuildContext context) => HomePage(),
         '/reviews': (BuildContext context) => ReviewsPage(),
         '/review_body': (BuildContext context) => ReviewBodyPage(),
-        '/scan_logs': (BuildContext contexr) => ScansPage()
+        '/scan_logs': (BuildContext context) => ScansPage()
       },
     );
   }
