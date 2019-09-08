@@ -3,6 +3,9 @@ import 'package:farmtrust_app/home_page/home_page_viewmodel.dart';
 import 'package:farmtrust_app/shared_widgets/arc_button.dart';
 
 class HomePageView extends HomePageViewModel {
+  final Color _primaryColor = Color(0xff00c853);
+  final Color _lightBlackColor = Color(0xff424242);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,36 +19,36 @@ class HomePageView extends HomePageViewModel {
               children: <Widget>[
                 Container(
                   alignment: Alignment.topRight,
-                  child: ArcButton(270, 60, Color(0xff00c853)),
+                  child: ArcButton(270, 60, _primaryColor),
                   margin: EdgeInsets.only(
                       top: 260.0, right: width < 400.0 ? 75.0 : 96.0),
                 ),
                 Container(
                   alignment: Alignment.topRight,
-                  child: ArcButton(330, 60, Color(0xff424242)),
+                  child: ArcButton(330, 60, _lightBlackColor),
                   margin: EdgeInsets.only(
-                      top: 257.0, right: width < 400.0 ? 75.0 : 97.5),
+                      top: 257.0, right: width < 400.0 ? 76.5 : 97.5),
                 ),
                 Container(
                   alignment: Alignment.topRight,
-                  child: ArcButton(30, 60, Color(0xff00c853)),
+                  child: ArcButton(30, 60, _primaryColor),
                   margin: EdgeInsets.only(
-                      top: 256.0, right: width < 400.0 ? 75.0 : 97.5),
+                      top: 256.0, right: width < 400.0 ? 76.0 : 97.5),
                 ),
                 Container(
-                  child: ArcButton(210, 60, Color(0xff424242)),
+                  child: ArcButton(210, 60, _lightBlackColor),
                   margin: EdgeInsets.only(
                       top: 260.0, left: width < 400.0 ? 75.0 : 96.0),
                 ),
                 Container(
-                  child: ArcButton(150, 60, Color(0xff00c853)),
+                  child: ArcButton(150, 60, _primaryColor),
                   margin: EdgeInsets.only(
-                      top: 257.0, left: width < 400.0 ? 75.0 : 97.5),
+                      top: 257.0, left: width < 400.0 ? 76.5 : 97.5),
                 ),
                 Container(
-                  child: ArcButton(90, 60, Color(0xff424242)),
+                  child: ArcButton(90, 60, _lightBlackColor),
                   margin: EdgeInsets.only(
-                      top: 256.0, left: width < 400.0 ? 75.0 : 96.5),
+                      top: 256.0, left: width < 400.0 ? 76.0 : 96.5),
                 ),
                 Align(
                   alignment: Alignment.topCenter,
@@ -69,7 +72,7 @@ class HomePageView extends HomePageViewModel {
                       BoxShadow(
                           color: Colors.green[700], offset: Offset(0.0, 0.0)),
                       BoxShadow(
-                          color: Color(0xff00c853),
+                          color: _primaryColor,
                           offset: Offset(0.0, 0.0),
                           spreadRadius: -6.0,
                           blurRadius: 8.0)
@@ -104,7 +107,8 @@ class HomePageView extends HomePageViewModel {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 220.0, left: 120.0),
+                  margin: EdgeInsets.only(
+                      top: 220.0, left: width > 400 ? 120.0 : 100.0),
                   child: Column(
                     children: <Widget>[
                       IconButton(
@@ -121,7 +125,7 @@ class HomePageView extends HomePageViewModel {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 320.0, left: 50.0),
+                  margin: EdgeInsets.only(top: 320.0, left: width > 400 ? 50.0 : 30.0),
                   child: Column(
                     children: <Widget>[
                       IconButton(
@@ -138,7 +142,7 @@ class HomePageView extends HomePageViewModel {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 430.0, left: 100.0),
+                  margin: EdgeInsets.only(top: 430.0, left: width > 400 ? 100.0 : 80.0),
                   child: Column(
                     children: <Widget>[
                       IconButton(
@@ -156,7 +160,7 @@ class HomePageView extends HomePageViewModel {
                 ),
                 Container(
                   alignment: Alignment.topRight,
-                  margin: EdgeInsets.only(top: 220.0, right: 120.0),
+                  margin: EdgeInsets.only(top: 220.0, right: width > 400 ? 120.0 : 100.0),
                   child: Column(
                     children: <Widget>[
                       IconButton(
@@ -174,7 +178,7 @@ class HomePageView extends HomePageViewModel {
                 ),
                 Container(
                   alignment: Alignment.topRight,
-                  margin: EdgeInsets.only(top: 320.0, right: 50.0),
+                  margin: EdgeInsets.only(top: 320.0, right: width > 400 ? 50.0 : 30.0),
                   child: Column(
                     children: <Widget>[
                       IconButton(
@@ -192,7 +196,7 @@ class HomePageView extends HomePageViewModel {
                 ),
                 Container(
                   alignment: Alignment.topRight,
-                  margin: EdgeInsets.only(top: 430.0, right: 120.0),
+                  margin: EdgeInsets.only(top: 430.0, right: width > 400 ? 120.0 : 100.0),
                   child: Column(
                     children: <Widget>[
                       IconButton(
