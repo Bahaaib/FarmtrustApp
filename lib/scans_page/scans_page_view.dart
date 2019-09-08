@@ -50,7 +50,7 @@ class ScansPageView extends ScansPageViewModel {
               child: ListView.builder(
                   itemCount: 3,
                   itemBuilder: (BuildContext context, int position) =>
-                      buildListItems(context, position)),
+                      buildListItems(context, position, _width)),
             ),
             Column(
                 mainAxisSize: MainAxisSize.max,
@@ -182,11 +182,11 @@ class ScansPageView extends ScansPageViewModel {
         }));
   }
 
-  Widget buildListItems(BuildContext context, int position) {
+  Widget buildListItems(BuildContext context, int position, double width) {
     return Center(
         child: Container(
       margin: EdgeInsets.only(top: 10.0, bottom: 15.0),
-      width: 380.0,
+      width: width > 400 ? 380.0 : 340,
       height: 240.0,
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(color: Colors.grey[400], blurRadius: 20.0, spreadRadius: 5.0),
@@ -195,7 +195,7 @@ class ScansPageView extends ScansPageViewModel {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            width: 380.0,
+            width: width > 400 ? 380.0 : 340,
             height: 220.0,
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(15.0)),
@@ -321,7 +321,7 @@ class ScansPageView extends ScansPageViewModel {
         Align(
           alignment: Alignment.topCenter,
           child: Container(
-            width: 340.0,
+            width: width > 400? 340.0 : 300,
             height: 100.0,
             decoration: BoxDecoration(
                 image: DecorationImage(
