@@ -111,12 +111,16 @@ class HomePageView extends HomePageViewModel {
                       top: 220.0, left: width > 400 ? 120.0 : 100.0),
                   child: Column(
                     children: <Widget>[
-                      IconButton(
-                          icon: Image.asset(
-                            'assets/ic_scan.png',
-                            color: Colors.white,
-                          ),
-                          onPressed: () {}),
+                      Material(
+                          type: MaterialType.transparency,
+                          shape: CircleBorder(),
+                          clipBehavior: Clip.antiAlias,
+                          child: IconButton(
+                              icon: Image.asset(
+                                'assets/ic_scan.png',
+                                color: Colors.white,
+                              ),
+                              onPressed: () {})),
                       Text(
                         'Scans',
                         style: TextStyle(color: Colors.white, fontSize: 15.0),
@@ -125,15 +129,20 @@ class HomePageView extends HomePageViewModel {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 320.0, left: width > 400 ? 50.0 : 30.0),
+                  margin: EdgeInsets.only(
+                      top: 320.0, left: width > 400 ? 50.0 : 30.0),
                   child: Column(
                     children: <Widget>[
-                      IconButton(
-                          icon: Image.asset(
-                            'assets/ic_account.png',
-                            color: Colors.white,
-                          ),
-                          onPressed: () {}),
+                      Material(
+                          type: MaterialType.transparency,
+                          shape: CircleBorder(),
+                          clipBehavior: Clip.antiAlias,
+                          child: IconButton(
+                              icon: Image.asset(
+                                'assets/ic_account.png',
+                                color: Colors.white,
+                              ),
+                              onPressed: () {})),
                       Text(
                         'Account',
                         style: TextStyle(color: Colors.white, fontSize: 15.0),
@@ -142,15 +151,20 @@ class HomePageView extends HomePageViewModel {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 430.0, left: width > 400 ? 100.0 : 80.0),
+                  margin: EdgeInsets.only(
+                      top: 430.0, left: width > 400 ? 100.0 : 80.0),
                   child: Column(
                     children: <Widget>[
-                      IconButton(
-                          icon: Image.asset(
-                            'assets/ic_supermarket.png',
-                            color: Colors.white,
-                          ),
-                          onPressed: () {}),
+                      Material(
+                          type: MaterialType.transparency,
+                          shape: CircleBorder(),
+                          clipBehavior: Clip.antiAlias,
+                          child: IconButton(
+                              icon: Image.asset(
+                                'assets/ic_supermarket.png',
+                                color: Colors.white,
+                              ),
+                              onPressed: () {})),
                       Text(
                         'Supermarkets',
                         style: TextStyle(color: Colors.white, fontSize: 15.0),
@@ -160,15 +174,20 @@ class HomePageView extends HomePageViewModel {
                 ),
                 Container(
                   alignment: Alignment.topRight,
-                  margin: EdgeInsets.only(top: 220.0, right: width > 400 ? 120.0 : 100.0),
+                  margin: EdgeInsets.only(
+                      top: 220.0, right: width > 400 ? 120.0 : 100.0),
                   child: Column(
                     children: <Widget>[
-                      IconButton(
-                          icon: Image.asset(
-                            'assets/ic_recall.png',
-                            color: Colors.white,
-                          ),
-                          onPressed: () {}),
+                      Material(
+                          type: MaterialType.transparency,
+                          shape: CircleBorder(),
+                          clipBehavior: Clip.antiAlias,
+                          child: IconButton(
+                              icon: Image.asset(
+                                'assets/ic_recall.png',
+                                color: Colors.white,
+                              ),
+                              onPressed: () {})),
                       Text(
                         'Recalls',
                         style: TextStyle(color: Colors.white, fontSize: 15.0),
@@ -178,15 +197,21 @@ class HomePageView extends HomePageViewModel {
                 ),
                 Container(
                   alignment: Alignment.topRight,
-                  margin: EdgeInsets.only(top: 320.0, right: width > 400 ? 50.0 : 30.0),
+                  margin: EdgeInsets.only(
+                      top: 320.0, right: width > 400 ? 50.0 : 30.0),
                   child: Column(
                     children: <Widget>[
-                      IconButton(
-                          icon: Image.asset(
-                            'assets/ic_rate.png',
-                            color: Colors.white,
-                          ),
-                          onPressed: () {}),
+                      Material(
+                        type: MaterialType.transparency,
+                        shape: CircleBorder(),
+                        clipBehavior: Clip.antiAlias,
+                        child: IconButton(
+                            icon: Image.asset(
+                              'assets/ic_rate.png',
+                              color: Colors.white,
+                            ),
+                            onPressed: () {}),
+                      ),
                       Text(
                         'Rate us',
                         style: TextStyle(color: Colors.white, fontSize: 15.0),
@@ -196,15 +221,20 @@ class HomePageView extends HomePageViewModel {
                 ),
                 Container(
                   alignment: Alignment.topRight,
-                  margin: EdgeInsets.only(top: 430.0, right: width > 400 ? 120.0 : 100.0),
+                  margin: EdgeInsets.only(
+                      top: 430.0, right: width > 400 ? 120.0 : 100.0),
                   child: Column(
                     children: <Widget>[
-                      IconButton(
-                          icon: Image.asset(
-                            'assets/ic_about.png',
-                            color: Colors.white,
-                          ),
-                          onPressed: () {}),
+                      Material(
+                          type: MaterialType.transparency,
+                          shape: CircleBorder(),
+                          clipBehavior: Clip.antiAlias,
+                          child: IconButton(
+                              icon: Image.asset(
+                                'assets/ic_about.png',
+                                color: Colors.white,
+                              ),
+                              onPressed: () {})),
                       Text(
                         'About us',
                         style: TextStyle(color: Colors.white, fontSize: 15.0),
