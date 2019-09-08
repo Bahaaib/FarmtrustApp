@@ -50,7 +50,7 @@ class ReviewBodyPageView extends ReviewBodyPageViewModel {
                 child: Container(
                   margin: EdgeInsets.only(top: 30.0),
                   width: _width > 400 ? 350.0 : 310.0,
-                  height: _width > 400 ? 400.0 : 360,
+                  height: _width > 400 ? 400.0 : 360.0,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10.0),

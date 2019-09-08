@@ -12,52 +12,54 @@ class ReviewsPageView extends ReviewsPageViewModel {
         SystemUiOverlayStyle(statusBarColor: _primaryColor));
 
     return Scaffold(
-      backgroundColor: Colors.grey[200],
-      appBar: PreferredSize(
-          preferredSize: Size.fromHeight(80.0),
-          child: AppBar(
-            elevation: 0.0,
-            backgroundColor: _primaryColor,
-            title: Container(
-              alignment: Alignment.center,
-              margin: EdgeInsets.only(top: 30.0),
-              child: Text('Reviews & Comments'),
-            ),
-            leading: Container(
-              alignment: Alignment.topLeft,
-              margin: EdgeInsets.only(top: 20.0),
-              child: IconButton(
-                  icon: Icon(Icons.keyboard_backspace, color: Colors.white),
-                  onPressed: () {}),
-            ),
-            actions: <Widget>[
-              Container(
+        backgroundColor: Colors.grey[200],
+        appBar: PreferredSize(
+            preferredSize: Size.fromHeight(80.0),
+            child: AppBar(
+              elevation: 0.0,
+              backgroundColor: _primaryColor,
+              title: Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.only(top: 30.0),
+                child: Text('Reviews & Comments'),
+              ),
+              leading: Container(
                 alignment: Alignment.topLeft,
                 margin: EdgeInsets.only(top: 20.0),
                 child: IconButton(
-                    icon: Icon(Icons.menu, color: Colors.white),
+                    icon: Icon(Icons.keyboard_backspace, color: Colors.white),
                     onPressed: () {}),
               ),
-            ],
-          )),
-      body: ListView.builder(
-          itemCount: 10,
-          itemBuilder: (BuildContext context, int position) =>
-              buildListItems(context, position)),
-    );
+              actions: <Widget>[
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: EdgeInsets.only(top: 20.0),
+                  child: IconButton(
+                      icon: Icon(Icons.menu, color: Colors.white),
+                      onPressed: () {}),
+                ),
+              ],
+            )),
+        body: OrientationBuilder(builder: (context, orientation) {
+          double _width = MediaQuery.of(context).size.width;
+
+          return ListView.builder(
+              itemCount: 10,
+              itemBuilder: (BuildContext context, int position) =>
+                  buildListItems(context, position, _width));
+        }));
   }
 
-  Widget buildListItems(BuildContext context, int position) {
+  Widget buildListItems(BuildContext context, int position, double width) {
     return Center(
       child: Container(
-        margin: EdgeInsets.only(top: 15.0, bottom: 10.0),
-        width: 380.0,
+        margin: EdgeInsets.only(top: width > 400 ? 15.0 : 10.0, bottom: 10.0),
+        width: width > 400 ? 380.0 : 340.0,
         height: 90.0,
-        decoration: BoxDecoration(boxShadow: [BoxShadow(
-            color: Colors.grey[400],
-            blurRadius: 20.0,
-            spreadRadius: 5.0),],
-            color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+              color: Colors.grey[400], blurRadius: 20.0, spreadRadius: 5.0),
+        ], color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
         child: Row(
           children: <Widget>[
             Container(
@@ -75,14 +77,16 @@ class ReviewsPageView extends ReviewsPageViewModel {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(top: 20.0, left: 20.0),
+                  margin: EdgeInsets.only(
+                      top: 20.0, left: width > 400 ? 20.0 : 15.0),
                   child: Text(
                     'Keria S.',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 15.0, left: 20.0),
+                  margin: EdgeInsets.only(
+                      top: 15.0, left: width > 400 ? 20.0 : 15.0),
                   child: Text(
                     'Really Great Experience',
                     style: TextStyle(color: Colors.grey[600]),
@@ -96,20 +100,25 @@ class ReviewsPageView extends ReviewsPageViewModel {
             Column(
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(top: 20.0, right: 20.0),
+                  margin: EdgeInsets.only(
+                      top: width > 400 ? 20.0 : 25.0,
+                      right: width > 400 ? 20.0 : 12.0),
                   child: SmoothStarRating(
                     starCount: 5,
                     borderColor: Colors.orange,
                     color: Colors.orange,
-                    size: 20.0,
+                    size: width > 400 ? 20.0 : 18.0,
                     rating: 4,
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 10.0, right: 20.0),
+                  margin: EdgeInsets.only(
+                      top: 10.0, right: width > 400 ? 20.0 : 12.0),
                   child: Text(
                     '2 days ago',
-                    style: TextStyle(color: Colors.grey),
+                    style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: width > 400 ? 14.0 : 12.0),
                   ),
                 ),
               ],
