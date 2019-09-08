@@ -180,14 +180,14 @@ class RegisterPageView extends RegisterPageViewModel {
             child: Row(
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(top: 30.0),
+                  margin: EdgeInsets.only(top: 30.0, bottom: 20.0),
                   child: Text(
                     'Already have account?',
                     style: TextStyle(fontSize: 16.0),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 30.0, left: 8.0),
+                  margin: EdgeInsets.only(top: 30.0, left: 8.0, bottom: 20.0),
                   child: Text(
                     'Login',
                     style: TextStyle(
