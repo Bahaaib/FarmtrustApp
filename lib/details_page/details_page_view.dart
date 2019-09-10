@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:farmtrust_app/details_page/details_page_viewmodel.dart';
 import 'package:farmtrust_app/shared_widgets/collapsing_bar.dart';
+import 'package:farmtrust_app/shared_widgets/fixed_bar.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class DetailsPageView extends DetailsPageViewModel {
@@ -143,6 +144,3 @@ class DetailsPageView extends DetailsPageViewModel {
     );
   }
 }
-
-
-
