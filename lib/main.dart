@@ -4,11 +4,12 @@ import 'package:farmtrust_app/home_page/home_page.dart';
 import 'package:farmtrust_app/reviews_page/reviews_page.dart';
 import 'package:farmtrust_app/review_body_page/review_body_page.dart';
 import 'package:farmtrust_app/scans_page/scans_page.dart';
+import 'package:farmtrust_app/details_page/details_page.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  final Widget _home = RegisterPage();
+  final Widget _home = DetailsPage();
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         '/home': (BuildContext context) => HomePage(),
         '/reviews': (BuildContext context) => ReviewsPage(),
         '/review_body': (BuildContext context) => ReviewBodyPage(),
-        '/scan_logs': (BuildContext context) => ScansPage()
+        '/scan_logs': (BuildContext context) => ScansPage(),
+        '/details_page': (BuildContext context) => DetailsPage()
       },
     );
   }
