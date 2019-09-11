@@ -7,84 +7,87 @@ class CollapsingAppBar extends StatelessWidget {
     return Container(
       child: Stack(
         children: <Widget>[
-          Container(
-            height: 200.0,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/beans.jpg'), fit: BoxFit.cover),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(left: 20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Container(
-                        child: Text(
-                          'Green Gram - Nylon N26',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold),
+          ColorFiltered(
+            colorFilter: ColorFilter.mode(Colors.grey, BlendMode.colorBurn),
+            child: Container(
+              height: 200.0,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/beans.jpg'), fit: BoxFit.cover),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(left: 20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                          child: Text(
+                            'Green Gram - Nylon N26',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(right: 40.0),
-                        child: Text(
-                          '\$250',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold),
+                        Container(
+                          margin: EdgeInsets.only(right: 40.0),
+                          child: Text(
+                            '\$250',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 40.0, left: 20.0),
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.only(top: 20, right: 20),
-                        child: SmoothStarRating(
-                          starCount: 5,
-                          borderColor: Colors.orange,
-                          color: Colors.orange,
-                          size: 20.0,
-                          rating: 4,
+                  Container(
+                    margin: EdgeInsets.only(bottom: 40.0, left: 20.0),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(top: 20, right: 20),
+                          child: SmoothStarRating(
+                            starCount: 5,
+                            borderColor: Colors.orange,
+                            color: Colors.orange,
+                            size: 20.0,
+                            rating: 4,
+                          ),
                         ),
-                      ),
-                      Material(
-                        color: Colors.transparent,
-                        child: InkWell(
-                          onTap: () {},
-                          child: Container(
-                            margin: EdgeInsets.only(top: 20.0, right: 20.0),
-                            child: Text(
-                              'View All',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
+                        Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            onTap: () {},
+                            child: Container(
+                              margin: EdgeInsets.only(top: 20.0, right: 20.0),
+                              child: Text(
+                                'View All',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 20.0, left: 100.0),
-                        child: Text(
-                          '250 Calories',
-                          style: TextStyle(
-                            color: Colors.white,
+                        Container(
+                          margin: EdgeInsets.only(top: 20.0, left: 100.0),
+                          child: Text(
+                            '250 Calories',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
           Align(
