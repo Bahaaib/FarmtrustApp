@@ -46,7 +46,10 @@ class DetailsPageView extends DetailsPageViewModel {
             SliverAppBar(
               backgroundColor: isShrink ? Colors.green : Colors.transparent,
               titleSpacing: 0.0,
-              title: FixedAppBar(),
+              title: FixedAppBar(
+                title: 'Green Gram - Nylon N26',
+                isVisible: isShrink,
+              ),
               pinned: true,
               expandedHeight: 285.0,
               flexibleSpace: FlexibleSpaceBar(
