@@ -5,10 +5,9 @@ import 'package:farmtrust_app/shared_widgets/fixed_bar.dart';
 import 'package:farmtrust_app/shared_widgets/farmer_tile.dart';
 import 'package:farmtrust_app/shared_widgets/single_line_tile.dart';
 import 'package:farmtrust_app/shared_widgets/storage_tile.dart';
+import 'package:farmtrust_app/shared_widgets/comments_tile.dart';
 
 class DetailsPageView extends DetailsPageViewModel {
-  final Color _primaryColor = Color(0xff00c853);
-
   ScrollController _scrollController;
 
   bool lastStatus = true;
@@ -69,7 +68,8 @@ class DetailsPageView extends DetailsPageViewModel {
               SingleLineTile(
                   _width, 'Crop Aggrevation and Handling', 'By Miranio CBO'),
               StorageTile(_width, 'Storage', 'By Yash Commodities - Buyer'),
-              SingleLineTile(_width, 'Retail', 'By Carrefour')
+              SingleLineTile(_width, 'Retail', 'By Carrefour'),
+              CommentsTile(_width, 'Comments')
             ]))
           ],
         ),
