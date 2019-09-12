@@ -3,6 +3,7 @@ import 'package:farmtrust_app/details_page/details_page_viewmodel.dart';
 import 'package:farmtrust_app/shared_widgets/collapsing_bar.dart';
 import 'package:farmtrust_app/shared_widgets/fixed_bar.dart';
 import 'package:farmtrust_app/shared_widgets/farmer_tile.dart';
+
 class DetailsPageView extends DetailsPageViewModel {
   final Color _primaryColor = Color(0xff00c853);
 
@@ -59,14 +60,7 @@ class DetailsPageView extends DetailsPageViewModel {
               ),
             ),
             SliverList(
-                delegate: SliverChildListDelegate([
-              ExpansionTile(
-                title: Text('Farmer Details'),
-                children: <Widget>[
-                  FarmerDetailsTile(_width)
-                ],
-              )
-            ]))
+                delegate: SliverChildListDelegate([FarmerDetailsTile(_width, 'Farmer Details')]))
           ],
         ),
       );
