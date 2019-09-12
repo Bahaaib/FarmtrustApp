@@ -74,7 +74,10 @@ class FarmerDetailsTile extends StatelessWidget {
         ),
         Container(
             margin: EdgeInsets.only(
-                top: 15.0, left: 20.0, right: 20.0, bottom: 15.0),
+                top: 15.0,
+                left: 20.0,
+                right: _width > 400.0 ? 20.0 : 12.0,
+                bottom: 15.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
