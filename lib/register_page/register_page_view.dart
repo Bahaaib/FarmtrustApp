@@ -4,6 +4,7 @@ import 'package:farmtrust_app/home_page/home_page.dart';
 import 'package:farmtrust_app/reviews_page/reviews_page.dart';
 import 'package:farmtrust_app/review_body_page/review_body_page.dart';
 import 'package:farmtrust_app/scans_page/scans_page.dart';
+import 'package:farmtrust_app/details_page/details_page.dart';
 
 class RegisterPageView extends RegisterPageViewModel {
   bool passwordVisible = false;
@@ -59,13 +60,22 @@ class RegisterPageView extends RegisterPageViewModel {
                     margin: EdgeInsets.only(top: 20.0),
                     child: Text('Go To Scan Logs ->')),
               ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => DetailsPage()));
+                },
+                child: Container(
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: Text('Go To Details Page ->')),
+              ),
             ],
           ),
         ),
         Center(
           child: Container(
             width: 300.0,
-            margin: EdgeInsets.only(top: 140.0),
+            margin: EdgeInsets.only(top: 30.0),
             child: TextField(
               controller: nameController,
               maxLength: 64,
