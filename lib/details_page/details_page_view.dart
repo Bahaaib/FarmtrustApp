@@ -68,7 +68,8 @@ class DetailsPageView extends DetailsPageViewModel {
                   _width, 'Crop Production', 'Provided by Farmer (Lucy M.)'),
               SingleLineTile(
                   _width, 'Crop Aggrevation and Handling', 'By Miranio CBO'),
-              StorageTile(_width, 'Storage', 'By Yash Commodities - Buyer')
+              StorageTile(_width, 'Storage', 'By Yash Commodities - Buyer'),
+              SingleLineTile(_width, 'Retail', 'By Carrefour')
             ]))
           ],
         ),
