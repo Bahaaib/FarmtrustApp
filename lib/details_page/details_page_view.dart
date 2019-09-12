@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:farmtrust_app/details_page/details_page_viewmodel.dart';
-import 'package:farmtrust_app/shared_widgets/collapsing_bar.dart';
+import 'package:farmtrust_app/shared_widgets/flexible_bar.dart';
 import 'package:farmtrust_app/shared_widgets/fixed_bar.dart';
 import 'package:farmtrust_app/shared_widgets/farmer_tile.dart';
 import 'package:farmtrust_app/shared_widgets/single_line_tile.dart';
@@ -57,7 +57,7 @@ class DetailsPageView extends DetailsPageViewModel {
               expandedHeight: 285.0,
               flexibleSpace: FlexibleSpaceBar(
                 titlePadding: EdgeInsets.only(left: 40.0, bottom: 20.0),
-                background: CollapsingAppBar(),
+                background: FlexibleAppBar(_width),
               ),
             ),
             SliverList(

@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
-class CollapsingAppBar extends StatelessWidget {
+class FlexibleAppBar extends StatelessWidget {
+  double _width;
+
+  FlexibleAppBar(double width) {
+    this._width = width;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -75,7 +81,8 @@ class CollapsingAppBar extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 20.0, left: 100.0),
+                          margin: EdgeInsets.only(
+                              top: 20.0, left: _width > 400.0 ? 100.0 : 50.0),
                           child: Text(
                             '250 Calories',
                             style: TextStyle(
@@ -140,7 +147,7 @@ class CollapsingAppBar extends StatelessWidget {
                 ],
               ),
               margin: EdgeInsets.only(bottom: 20.0),
-              width: 380.0,
+              width: _width > 400.0 ? 380.0 : 340,
               height: 120.0,
               decoration: BoxDecoration(
                   boxShadow: [
