@@ -63,7 +63,10 @@ class DetailsPageView extends DetailsPageViewModel {
             SliverList(
                 delegate: SliverChildListDelegate([
               FarmerDetailsTile(_width, 'Farmer Details'),
-              SingleLineTile(_width, 'Crop Production', 'Provided by Farmer (Lucy M.)')
+              SingleLineTile(
+                  _width, 'Crop Production', 'Provided by Farmer (Lucy M.)'),
+              SingleLineTile(
+                  _width, 'Crop Aggrevation and Handling', 'By Miranio CBO')
             ]))
           ],
         ),
