@@ -3,8 +3,6 @@ import 'package:farmtrust_app/details_page/details_page_viewmodel.dart';
 import 'package:farmtrust_app/shared_widgets/collapsing_bar.dart';
 import 'package:farmtrust_app/shared_widgets/fixed_bar.dart';
 import 'package:farmtrust_app/shared_widgets/farmer_tile.dart';
-import 'package:smooth_star_rating/smooth_star_rating.dart';
-
 class DetailsPageView extends DetailsPageViewModel {
   final Color _primaryColor = Color(0xff00c853);
 
@@ -65,115 +63,7 @@ class DetailsPageView extends DetailsPageViewModel {
               ExpansionTile(
                 title: Text('Farmer Details'),
                 children: <Widget>[
-                  FarmerDetailsTile(_width),
-                  Container(
-                      margin: EdgeInsets.only(
-                          top: 15.0, left: 20.0, right: 20.0, bottom: 15.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                child: Text(
-                                  'Selling Price',
-                                  style: TextStyle(
-                                      color: _primaryColor,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(top: 8.0),
-                                child: Text(
-                                  'KSH 160/KG',
-                                ),
-                              ),
-                            ],
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(top: 10),
-                            height: 30.0,
-                            child: VerticalDivider(
-                              color: Colors.grey[400],
-                            ),
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                child: Text(
-                                  'Land Size',
-                                  style: TextStyle(
-                                      color: _primaryColor,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(top: 8.0),
-                                child: Text(
-                                  '1.3 Acres',
-                                ),
-                              ),
-                            ],
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(top: 10),
-                            height: 30.0,
-                            child: VerticalDivider(
-                              color: Colors.grey[400],
-                            ),
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                child: Text(
-                                  'Farming Method',
-                                  style: TextStyle(
-                                      color: _primaryColor,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(top: 8.0),
-                                child: Text(
-                                  'Conservation Agriculture',
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      )),
-                  Center(
-                      child: Container(
-                    child: RaisedButton(
-                      textColor: Colors.white,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          IconButton(
-                              icon: Image.asset(
-                                'assets/ic_tip.png',
-                                color: Colors.white,
-                              ),
-                              color: Colors.white,
-                              onPressed: () {}),
-                          Padding(
-                            padding: EdgeInsets.only(right: 10.0),
-                          ),
-                          Text(
-                            'Tip Farmer',
-                            style: TextStyle(fontSize: 16.0),
-                          ),
-                        ],
-                      ),
-                      onPressed: () {},
-                      color: Color(0xff00c853),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0)),
-                    ),
-                    width: 200.0,
-                    height: 50.0,
-                    margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
-                  )),
+                  FarmerDetailsTile(_width)
                 ],
               )
             ]))
