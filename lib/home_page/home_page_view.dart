@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:farmtrust_app/home_page/home_page_viewmodel.dart';
 import 'package:farmtrust_app/shared_widgets/arc_button.dart';
+import 'package:farmtrust_app/scans_page/scans_page.dart';
 
 class HomePageView extends HomePageViewModel {
   final Color _primaryColor = Color(0xff00c853);
@@ -85,23 +86,37 @@ class HomePageView extends HomePageViewModel {
                     margin: EdgeInsets.only(top: 310.0),
                     width: 110,
                     height: 110,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.only(top: 0.0),
-                          width: 50,
-                          height: 50,
-                          child: Image.asset('assets/ic_qrcode.png'),
-                        ),
-                        Container(
-                          child: Text(
-                            'SCAN',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                    child: Material(
+                        type: MaterialType.transparency,
+                        shape: CircleBorder(),
+                        clipBehavior: Clip.antiAlias,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ScansPage()));
+                          },
+                          borderRadius: BorderRadius.circular(20.0),
+                          splashColor: Colors.green,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Container(
+                                margin: EdgeInsets.only(top: 0.0),
+                                width: 50,
+                                height: 50,
+                                child: Image.asset('assets/ic_qrcode.png'),
+                              ),
+                              Container(
+                                child: Text(
+                                  'SCAN',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ],
                           ),
-                        )
-                      ],
-                    ),
+                        )),
                     decoration: BoxDecoration(
                         color: Colors.white, shape: BoxShape.circle),
                   ),

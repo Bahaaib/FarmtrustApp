@@ -144,7 +144,10 @@ class RegisterPageView extends RegisterPageViewModel {
               'SIGN UP',
               style: TextStyle(fontSize: 16.0),
             ),
-            onPressed: signUp,
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
+            },
             color: Color(0xff00c853),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),

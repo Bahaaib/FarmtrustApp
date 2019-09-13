@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 
 class FixedAppBar extends StatelessWidget {
   String _title;
@@ -14,7 +16,6 @@ class FixedAppBar extends StatelessWidget {
     return Container(
         child: Row(
       children: <Widget>[
-        IconButton(icon: Icon(Icons.arrow_back), onPressed: () {}),
         AnimatedOpacity(
           opacity: _isVisible ? 1.0 : 0.0,
           duration: Duration(milliseconds: 500),
