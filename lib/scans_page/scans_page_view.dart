@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:farmtrust_app/scans_page/scans_page_viewmodel.dart';
-import 'package:farmtrust_app/details_page/details_page.dart';
 
 class ScansPageView extends ScansPageViewModel {
   final Color _primaryColor = Color(0xff00c853);
@@ -171,13 +170,7 @@ class ScansPageView extends ScansPageViewModel {
                                         'assets/ic_qrcode.png',
                                         color: Colors.white,
                                       ),
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    DetailsPage()));
-                                      }),
+                                      onPressed: scanPressed),
                                 ),
                               ),
                             ),
@@ -339,5 +332,25 @@ class ScansPageView extends ScansPageViewModel {
         )
       ]),
     ));
+  }
+
+  @override
+  void showMessageDialog(String title, String message) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(title),
+            content: Text(message),
+            actions: <Widget>[
+              InkWell(
+                child: Text('ok'),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
   }
 }
