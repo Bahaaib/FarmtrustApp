@@ -16,6 +16,8 @@ dependencies:
   smooth_star_rating: 1.0.3
   flutter_facebook_login: 2.0.0
   barcode_scan: ^0.0.4
+  google_sign_in: ^3.2.2
+
 
 
 dev_dependencies:

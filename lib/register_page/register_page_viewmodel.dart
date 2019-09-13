@@ -3,6 +3,7 @@ import 'package:farmtrust_app/register_page/register_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 abstract class RegisterPageViewModel extends State<RegisterPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -11,6 +12,8 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
   final TextEditingController mobileController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final facebookLogin = FacebookLogin();
+  GoogleSignInAccount googleAccount;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   RegisterPageViewModel() {
     _auth.onAuthStateChanged.listen((user) {
@@ -25,6 +28,26 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
       print('got: ${e.message}');
       showMessageDialog('error', e.message);
     }
+  }
+
+  Future<void> signInWithGoogle() async {
+    googleAccount = await _googleSignIn.signIn();
+    final GoogleSignInAuthentication googleAuth =
+        await googleAccount.authentication;
+    final AuthCredential credential = GoogleAuthProvider.getCredential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+    final FirebaseUser user = await _auth.signInWithCredential(credential);
+    assert(user.email != null);
+    assert(user.displayName != null);
+    assert(!user.isAnonymous);
+    assert(await user.getIdToken() != null);
+
+    final FirebaseUser currentUser = await _auth.currentUser();
+    assert(user.uid == currentUser.uid);
+
+    print('signInWithGoogle succeeded: $user');
   }
 
   Future<void> _signUpWithFacebook() async {
