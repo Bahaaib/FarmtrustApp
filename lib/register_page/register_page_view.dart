@@ -220,7 +220,7 @@ class RegisterPageView extends RegisterPageViewModel {
                   child: Ink.image(
                     image: AssetImage('assets/ic_google.png'),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: signInWithGoogle,
                     ),
                   ),
                 ),
