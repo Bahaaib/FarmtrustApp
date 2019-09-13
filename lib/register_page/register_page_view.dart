@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:farmtrust_app/register_page/register_page_viewmodel.dart';
+import 'package:farmtrust_app/home_page/home_page.dart';
+import 'package:farmtrust_app/reviews_page/reviews_page.dart';
+import 'package:farmtrust_app/review_body_page/review_body_page.dart';
+import 'package:farmtrust_app/scans_page/scans_page.dart';
+import 'package:farmtrust_app/details_page/details_page.dart';
 
 class RegisterPageView extends RegisterPageViewModel {
   bool passwordVisible = false;
@@ -15,9 +20,62 @@ class RegisterPageView extends RegisterPageViewModel {
     return Scaffold(
       body: ListView(children: <Widget>[
         Center(
+          child: Column(
+            children: <Widget>[
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomePage()));
+                },
+                child: Container(
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: Text('Go To Home ->')),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ReviewsPage()));
+                },
+                child: Container(
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: Text('Go To Reviews ->')),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ReviewBodyPage()));
+                },
+                child: Container(
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: Text('Go To Write Review ->')),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ScansPage()));
+                },
+                child: Container(
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: Text('Go To Scan Logs ->')),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => DetailsPage()));
+                },
+                child: Container(
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: Text('Go To Details Page ->')),
+              ),
+            ],
+          ),
+        ),
+        Center(
           child: Container(
             width: 300.0,
-            margin: EdgeInsets.only(top: 140.0),
+            margin: EdgeInsets.only(top: 30.0),
             child: TextField(
               controller: nameController,
               maxLength: 64,
@@ -180,22 +238,25 @@ class RegisterPageView extends RegisterPageViewModel {
             child: Row(
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(top: 30.0),
+                  margin: EdgeInsets.only(top: 30.0, bottom: 20.0),
                   child: Text(
                     'Already have account?',
                     style: TextStyle(fontSize: 16.0),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: 30.0, left: 8.0),
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                        fontSize: 16.0,
-                        color: Color(0xff00c853),
-                        fontWeight: FontWeight.bold),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    margin: EdgeInsets.only(top: 30.0, left: 8.0, bottom: 20.0),
+                    child: Text(
+                      'Login',
+                      style: TextStyle(
+                          fontSize: 16.0,
+                          color: Color(0xff00c853),
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
-                ),
+                )
               ],
             ),
           ),
