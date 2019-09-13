@@ -165,12 +165,13 @@ class ScansPageView extends ScansPageViewModel {
                                   shape: CircleBorder(),
                                   clipBehavior: Clip.antiAlias,
                                   child: IconButton(
-                                      splashColor: Colors.grey,
-                                      icon: Image.asset(
-                                        'assets/ic_qrcode.png',
-                                        color: Colors.white,
-                                      ),
-                                      onPressed: () {}),
+                                    splashColor: Colors.grey,
+                                    icon: Image.asset(
+                                      'assets/ic_qrcode.png',
+                                      color: Colors.white,
+                                    ),
+                                    onPressed: scanPressed,
+                                  ),
                                 ),
                               ),
                             ),
@@ -332,5 +333,25 @@ class ScansPageView extends ScansPageViewModel {
         )
       ]),
     ));
+  }
+
+  @override
+  void showMessageDialog(String title, String message) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(title),
+            content: Text(message),
+            actions: <Widget>[
+              InkWell(
+                child: Text('ok'),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
   }
 }
