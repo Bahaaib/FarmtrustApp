@@ -41,4 +41,4 @@ flutter:
     - assets/ic_avatar.png
     - assets/ic_kenya.png
     - assets/beans.jpg
-    #- assets/ic_tip.png
+    - assets/ic_tip.png

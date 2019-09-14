@@ -170,7 +170,7 @@ class ScansPageView extends ScansPageViewModel {
                                         'assets/ic_qrcode.png',
                                         color: Colors.white,
                                       ),
-                                      onPressed: scanPressed),
+                                      onPressed: performScan),
                                 ),
                               ),
                             ),
@@ -335,19 +335,30 @@ class ScansPageView extends ScansPageViewModel {
   }
 
   @override
-  void showMessageDialog(String title, String message) {
+  void showScanResultDialog(String title, String message) {
     showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text(title),
+            title: Text(
+              title,
+              style: TextStyle(color: _primaryColor),
+            ),
             content: Text(message),
             actions: <Widget>[
-              InkWell(
-                child: Text('ok'),
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                    child: OutlineButton(
+                        splashColor: Colors.green,
+                        borderSide: BorderSide(color: _primaryColor),
+                        child: Text(
+                          'Product Details',
+                          style: TextStyle(color: _primaryColor),
+                        ),
+                        onPressed: () {},
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)))),
               )
             ],
           );

@@ -4,7 +4,7 @@ import 'package:farmtrust_app/scans_page/scans_page.dart';
 import 'package:flutter/services.dart';
 
 abstract class ScansPageViewModel extends State<ScansPage> {
-  void scanPressed() async {
+  void performScan() async {
     String scanResult = "Scan Error: Make sure you're scanning the right code";
     try {
       final String barcode = await BarcodeScanner.scan();
@@ -20,8 +20,8 @@ abstract class ScansPageViewModel extends State<ScansPage> {
     } on Exception catch (e) {
       scanResult = 'Error: $e';
     }
-    showMessageDialog('scanned', scanResult);
+    showScanResultDialog('Scanned', scanResult);
   }
 
-  void showMessageDialog(String title, String message);
+  void showScanResultDialog(String title, String message);
 }
