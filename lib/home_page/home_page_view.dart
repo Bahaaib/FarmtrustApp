@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:farmtrust_app/home_page/home_page_viewmodel.dart';
 import 'package:farmtrust_app/shared_widgets/arc_button.dart';
 import 'package:farmtrust_app/scans_page/scans_page.dart';
+import 'package:farmtrust_app/details_page/details_page.dart';
 
 class HomePageView extends HomePageViewModel {
   final Color _primaryColor = Color(0xff00c853);
@@ -91,12 +92,7 @@ class HomePageView extends HomePageViewModel {
                         shape: CircleBorder(),
                         clipBehavior: Clip.antiAlias,
                         child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ScansPage()));
-                          },
+                          onTap: performScan,
                           borderRadius: BorderRadius.circular(20.0),
                           splashColor: Colors.green,
                           child: Column(
@@ -135,7 +131,12 @@ class HomePageView extends HomePageViewModel {
                                 'assets/ic_scan.png',
                                 color: Colors.white,
                               ),
-                              onPressed: () {})),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => DetailsPage()));
+                              })),
                       Text(
                         'Scans',
                         style: TextStyle(color: Colors.white, fontSize: 15.0),
@@ -264,5 +265,41 @@ class HomePageView extends HomePageViewModel {
           ),
       theme: ThemeData(primarySwatch: Colors.green),
     );
+  }
+
+  @override
+  void showScanResultDialog(String title, String message) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(
+              title,
+              style: TextStyle(color: _primaryColor),
+            ),
+            content: Text(message),
+            actions: <Widget>[
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                    child: OutlineButton(
+                        splashColor: Colors.green,
+                        borderSide: BorderSide(color: _primaryColor),
+                        child: Text(
+                          'Product Details',
+                          style: TextStyle(color: _primaryColor),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailsPage()));
+                        },
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)))),
+              )
+            ],
+          );
+        });
   }
 }
