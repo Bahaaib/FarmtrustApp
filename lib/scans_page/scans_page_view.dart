@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:farmtrust_app/scans_page/scans_page_viewmodel.dart';
+import 'package:farmtrust_app/details_page/details_page.dart';
 
 class ScansPageView extends ScansPageViewModel {
   final Color _primaryColor = Color(0xff00c853);
@@ -356,7 +357,12 @@ class ScansPageView extends ScansPageViewModel {
                           'Product Details',
                           style: TextStyle(color: _primaryColor),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailsPage()));
+                        },
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)))),
               )
