@@ -1,3 +1,4 @@
+import 'package:farmtrust_app/secret.dart';
 import 'package:flutter/material.dart';
 import 'package:farmtrust_app/register_page/register_page.dart';
 import 'package:farmtrust_app/home_page/home_page.dart';
@@ -5,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter_twitter_login/flutter_twitter_login.dart';
 
 abstract class RegisterPageViewModel extends State<RegisterPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -16,6 +18,10 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
   GoogleSignInAccount googleAccount;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   bool isLoading = false;
+  var twitterLogin = new TwitterLogin(
+    consumerKey: Secret.twitterApi,
+    consumerSecret: Secret.twitterApiSecret,
+  );
 
   RegisterPageViewModel() {
     _auth.onAuthStateChanged.listen((user) {
@@ -79,6 +85,16 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
 
         break;
     }
+  }
+
+  Future<void> signInWithTwitter() async {
+    final TwitterLoginResult result = await twitterLogin.authorize();
+    AuthCredential credential = TwitterAuthProvider.getCredential(
+        authToken: result.session.token,
+        authTokenSecret: result.session.secret);
+    FirebaseUser user = await _auth.signInWithCredential(credential);
+    print('signInWithGoogle succeeded: $user');
+    _goHome();
   }
 
   void showMessageDialog(String title, String message);

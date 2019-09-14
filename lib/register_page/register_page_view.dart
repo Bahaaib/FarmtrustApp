@@ -21,7 +21,9 @@ class RegisterPageView extends RegisterPageViewModel {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ModalProgressHUD(inAsyncCall: isLoading, child: ListView(children: <Widget>[
+        body: ModalProgressHUD(
+      inAsyncCall: isLoading,
+      child: ListView(children: <Widget>[
         Center(
           child: Column(
             children: <Widget>[
@@ -200,7 +202,7 @@ class RegisterPageView extends RegisterPageViewModel {
                   child: Ink.image(
                     image: AssetImage('assets/ic_twitter.png'),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: signInWithTwitter,
                     ),
                   ),
                 ),
@@ -264,8 +266,8 @@ class RegisterPageView extends RegisterPageViewModel {
             ),
           ),
         )
-      ]),)
-    );
+      ]),
+    ));
   }
 
   @override
