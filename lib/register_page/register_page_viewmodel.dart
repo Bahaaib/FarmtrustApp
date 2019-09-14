@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:farmtrust_app/register_page/register_page.dart';
+import 'package:farmtrust_app/home_page/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
@@ -14,6 +15,7 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
   final facebookLogin = FacebookLogin();
   GoogleSignInAccount googleAccount;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
+  bool isLoading = false;
 
   RegisterPageViewModel() {
     _auth.onAuthStateChanged.listen((user) {
@@ -23,11 +25,23 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
 
   Future<void> _signUpMailAndPass(String mail, String pass) async {
     try {
+      setState(() {
+        isLoading = true;
+      });
       await _auth.createUserWithEmailAndPassword(email: mail, password: pass);
+      setState(() {
+        isLoading = false;
+      });
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
     } on PlatformException catch (e) {
+      setState(() {
+        isLoading = false;
+      });
       print('got: ${e.message}');
       showMessageDialog('error', e.message);
     }
+
   }
 
   Future<void> signInWithGoogle() async {
@@ -48,6 +62,9 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
     assert(user.uid == currentUser.uid);
 
     print('signInWithGoogle succeeded: $user');
+
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => HomePage()));
   }
 
   Future<void> _signUpWithFacebook() async {
@@ -55,12 +72,16 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
     switch (result.status) {
       case FacebookLoginStatus.loggedIn:
         print('token: ${result.accessToken.token}');
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HomePage()));
         break;
       case FacebookLoginStatus.cancelledByUser:
         print('cancelled');
         break;
       case FacebookLoginStatus.error:
         print('error: ${result.errorMessage}');
+        showMessageDialog('error', result.errorMessage);
+
         break;
     }
   }

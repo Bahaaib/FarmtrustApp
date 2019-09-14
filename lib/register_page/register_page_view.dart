@@ -5,6 +5,7 @@ import 'package:farmtrust_app/reviews_page/reviews_page.dart';
 import 'package:farmtrust_app/review_body_page/review_body_page.dart';
 import 'package:farmtrust_app/scans_page/scans_page.dart';
 import 'package:farmtrust_app/details_page/details_page.dart';
+import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class RegisterPageView extends RegisterPageViewModel {
   bool passwordVisible = false;
@@ -18,7 +19,7 @@ class RegisterPageView extends RegisterPageViewModel {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: <Widget>[
+      body: ModalProgressHUD(inAsyncCall: isLoading, child: ListView(children: <Widget>[
         Center(
           child: Column(
             children: <Widget>[
@@ -144,10 +145,7 @@ class RegisterPageView extends RegisterPageViewModel {
               'SIGN UP',
               style: TextStyle(fontSize: 16.0),
             ),
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => HomePage()));
-            },
+            onPressed: signUp,
             color: Color(0xff00c853),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
@@ -264,7 +262,7 @@ class RegisterPageView extends RegisterPageViewModel {
             ),
           ),
         )
-      ]),
+      ]),)
     );
   }
 
