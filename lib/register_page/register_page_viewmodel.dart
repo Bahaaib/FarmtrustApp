@@ -32,8 +32,7 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
       setState(() {
         isLoading = false;
       });
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
+      _goHome();
     } on PlatformException catch (e) {
       setState(() {
         isLoading = false;
@@ -41,7 +40,6 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
       print('got: ${e.message}');
       showMessageDialog('error', e.message);
     }
-
   }
 
   Future<void> signInWithGoogle() async {
@@ -62,9 +60,7 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
     assert(user.uid == currentUser.uid);
 
     print('signInWithGoogle succeeded: $user');
-
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => HomePage()));
+    _goHome();
   }
 
   Future<void> _signUpWithFacebook() async {
@@ -72,8 +68,7 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
     switch (result.status) {
       case FacebookLoginStatus.loggedIn:
         print('token: ${result.accessToken.token}');
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomePage()));
+        _goHome();
         break;
       case FacebookLoginStatus.cancelledByUser:
         print('cancelled');
@@ -94,5 +89,10 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
 
   void signUpFB() {
     _signUpWithFacebook();
+  }
+
+  void _goHome() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => HomePage()));
   }
 }
