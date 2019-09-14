@@ -8,6 +8,8 @@ import 'package:farmtrust_app/details_page/details_page.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class RegisterPageView extends RegisterPageViewModel {
+  final Color _primaryColor = Color(0xff00c853);
+
   bool passwordVisible = false;
 
   @override
@@ -84,9 +86,9 @@ class RegisterPageView extends RegisterPageViewModel {
               decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.person_pin,
-                    color: Color(0xff00c853),
+                    color: _primaryColor,
                   ),
-                  fillColor: Color(0xff00c853),
+                  fillColor: _primaryColor,
                   hintText: 'Username'),
             ),
           ),
@@ -102,9 +104,9 @@ class RegisterPageView extends RegisterPageViewModel {
               decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.mail_outline,
-                    color: Color(0xff00c853),
+                    color: _primaryColor,
                   ),
-                  fillColor: Color(0xff00c853),
+                  fillColor: _primaryColor,
                   hintText: 'Email Address'),
             ),
           ),
@@ -121,7 +123,7 @@ class RegisterPageView extends RegisterPageViewModel {
               decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.lock_outline,
-                    color: Color(0xff00c853),
+                    color: _primaryColor,
                   ),
                   suffixIcon: IconButton(
                       icon: Icon(passwordVisible
@@ -132,7 +134,7 @@ class RegisterPageView extends RegisterPageViewModel {
                           passwordVisible = !passwordVisible;
                         });
                       }),
-                  fillColor: Color(0xff00c853),
+                  fillColor: _primaryColor,
                   hintText: 'Enter Password'),
             ),
           ),
@@ -146,7 +148,7 @@ class RegisterPageView extends RegisterPageViewModel {
               style: TextStyle(fontSize: 16.0),
             ),
             onPressed: signUp,
-            color: Color(0xff00c853),
+            color: _primaryColor,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
           ),
@@ -253,7 +255,7 @@ class RegisterPageView extends RegisterPageViewModel {
                       'Login',
                       style: TextStyle(
                           fontSize: 16.0,
-                          color: Color(0xff00c853),
+                          color: _primaryColor,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -272,14 +274,27 @@ class RegisterPageView extends RegisterPageViewModel {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text(title),
+            title: Text(
+              title,
+              style: TextStyle(color: Colors.red),
+            ),
             content: Text(message),
             actions: <Widget>[
-              InkWell(
-                child: Text('ok'),
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                    child: OutlineButton(
+                        splashColor: Colors.green,
+                        borderSide: BorderSide(color: _primaryColor),
+                        child: Text(
+                          'OK',
+                          style: TextStyle(color: _primaryColor),
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)))),
               )
             ],
           );

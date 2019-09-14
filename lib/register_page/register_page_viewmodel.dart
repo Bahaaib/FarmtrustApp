@@ -38,7 +38,7 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
         isLoading = false;
       });
       print('got: ${e.message}');
-      showMessageDialog('error', e.message);
+      showMessageDialog('Error', e.message);
     }
   }
 
@@ -75,7 +75,7 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
         break;
       case FacebookLoginStatus.error:
         print('error: ${result.errorMessage}');
-        showMessageDialog('error', result.errorMessage);
+        showMessageDialog('Error', result.errorMessage);
 
         break;
     }
